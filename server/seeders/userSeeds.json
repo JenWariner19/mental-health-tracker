@@ -1,0 +1,52 @@
+[
+  {
+    "username": "Kelley Norseth",
+    "email": "knorseth@test.com",
+    "password": "password01"
+  },
+  {
+    "username": "AllisonM",
+    "email": "allisonM@test.com",
+    "password": "password02"
+  },
+  {
+    "username": "Chuck Smith",
+    "email": "csmith@test.com",
+    "password": "password03"
+  },
+  {
+    "username": "Jesse Daniels",
+    "email": "jdaniels@test.com",
+    "password": "password04"
+  },
+  {
+    "username": "Parker Lane",
+    "email": "plane@test.com",
+    "password": "password05"
+  },
+  {
+    "username": "Hannah Lynn",
+    "email": "hlh@test.com",
+    "password": "password06"
+  },
+  {
+    "username": "Vincent Garcia",
+    "email": "vgarcia@test.com",
+    "password": "password07"
+  },
+  {
+    "username": "Denise Jones",
+    "email": "djones@test.com",
+    "password": "password08"
+  },
+  {
+    "username": "Mateo Hernandez",
+    "email": "mhernandez@test.com",
+    "password": "password09"
+  },
+  {
+    "username": "Maria Garza",
+    "email": "mgarza@test.com",
+    "password": "password10"
+  }
+]
