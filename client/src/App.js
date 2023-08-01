@@ -1,10 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
-import Navbar from './components/navbar/navbar';
-import Footer from './components/footer/footer';
+import Navbar from "./components/navbar/navbar";
+import Footer from "./components/footer/footer";
+import Home from "./pages/Home";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -33,7 +39,7 @@ function App() {
           <Navbar />
           <Routes>
             {/* Define your routes here */}
-            
+            <Route path="/" element={<Home />} />
           </Routes>
         </div>
       </Router>

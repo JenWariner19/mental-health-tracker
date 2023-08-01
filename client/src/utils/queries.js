@@ -55,7 +55,7 @@ query getSingleThought($thoughtId: ID!) {
 `;
 
 export const QUERY_ME = gql`
-query ExampleQuery {
+query Me {
     me {
       _id
       username
