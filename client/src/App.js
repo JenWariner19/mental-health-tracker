@@ -8,8 +8,10 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
-import Navbar from "./components/navbar/navbar";
-import Footer from "./components/footer/footer";
+
+import Navbar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
+import MyJournalEntries from './pages/MyJournal';
 import Home from "./pages/Home";
 
 const httpLink = createHttpLink({
@@ -38,8 +40,11 @@ function App() {
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Navbar />
           <Routes>
-            {/* Define your routes here */}
+
             <Route path="/" element={<Home />} />
+            <Route path="/myJournal" element={<MyJournalEntries />} />
+            {/* Add more routes for other pages here */}
+
           </Routes>
         </div>
       </Router>
