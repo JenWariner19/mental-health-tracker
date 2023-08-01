@@ -34,7 +34,6 @@ function App() {
           <Routes>
             {/* Define your routes here */}
             
-            
           </Routes>
         </div>
       </Router>
