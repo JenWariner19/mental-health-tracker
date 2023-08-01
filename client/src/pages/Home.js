@@ -6,6 +6,9 @@ import WelcomeMessage from '../components/Welcome';
 
 import { QUERY_THOUGHTS } from '../utils/queries';
 
+const homepage = {
+  backgroundColor: 'white'
+};
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_THOUGHTS);
@@ -13,7 +16,7 @@ const Home = () => {
 
   return (
     <main>
-      <div>
+      <div style={homepage}>
         <div>
             <WelcomeMessage />
         </div>

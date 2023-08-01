@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './thoughtlist.css';
 
 const ThoughtList = ({
   thoughts,
@@ -12,12 +13,12 @@ const ThoughtList = ({
   }
 
   return (
-    <div>
+    <div className="thought-list-container">
       {showTitle && <h3>{title}</h3>}
       {thoughts &&
         thoughts.map((thought) => (
           <div key={thought._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 className="card-header text-light p-2 m-0">
               {showUsername ? (
                 <Link
                   className="text-light"
