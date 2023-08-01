@@ -5,6 +5,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
+import MyJournalEntries from './pages/MyJournal';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -32,8 +33,8 @@ function App() {
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Navbar />
           <Routes>
-            {/* Define your routes here */}
-            
+            <Route path="/myJournal" element={<MyJournalEntries />} />
+            {/* Add more routes for other pages here */}
           </Routes>
         </div>
       </Router>
