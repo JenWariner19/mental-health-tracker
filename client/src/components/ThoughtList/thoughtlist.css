@@ -1,0 +1,25 @@
+.thought-list-container {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+  }
+
+  .thought-list-container h3 {
+    text-decoration: underline;
+    font-size: 32px;
+  }
+
+  .card-header {
+    background-color: #11b8b1;
+    padding: 10px;
+  }
+
+  .btn-primary {
+    background-color: #faae56;
+    border-color: transparent;
+  }
+
+  .btn-primary:hover {
+    background-color: #11b8b1;
+    border-color: transparent;
+  }

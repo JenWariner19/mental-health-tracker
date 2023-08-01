@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
+import './welcome.css';
 
 const WelcomeMessage = () => {
   const { username: userParam } = useParams();
@@ -15,9 +16,14 @@ const WelcomeMessage = () => {
 
   if (Auth.loggedIn() && Auth.getProfile().username === userParam) {
     return (
-      <div>
-        <h2>{`Welcome ${user.username}!`}</h2>
-        <p>Site instructions after logging in go here.</p>
+      <div className="container">
+        <div className="image-block">
+          <img src="/mental-health.png" alt="lightbulb" />
+        </div>
+        <div className="text-block">
+          <h2>{`Welcome ${user.username}!`}</h2>
+          <p>Site instructions after logging in go here.</p>
+        </div>
       </div>
     );
   }
@@ -28,9 +34,14 @@ const WelcomeMessage = () => {
 
   if (!user?.username) {
     return (
-      <div>
-        <h2>Welcome to Mindful Memiors!</h2>
-        <p>Site instructions before logging in go here.</p>
+      <div className="container">
+        <div className="image-block">
+          <img src="./mental-logo.png" alt="lightbulb" />
+        </div>
+        <div className="text-block">
+          <h2>Welcome to Mindfulness Memoir!</h2>
+          <p>Site instructions before logging in go here.</p>
+        </div>
       </div>
     );
   }

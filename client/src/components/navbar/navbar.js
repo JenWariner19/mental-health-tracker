@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from '../signupForm';
 import LoginForm from '../loginForm';
+import './navbar.css';
 
 import Auth from '../../utils/auth';
 
@@ -28,35 +29,37 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
+     <Navbar>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
-            Mindfulness Memoir
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar'>
-            <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/resources'>
-                Resources
-              </Nav.Link>
-              {Auth.loggedIn() ? (
-                <>
-                  <Nav.Link as={Link} to='/myDaily'>
-                    Make Your Daily Entry Here
-                  </Nav.Link>
-                  <Nav.Link as={Link} to='/myJournal'>
-                    My Journal Entries
-                  </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                </>
-              ) : (
-                <>
-                  <Nav.Link onClick={openLoginModal}>Login</Nav.Link>
-                  <Nav.Link onClick={openSignupModal}>Sign Up</Nav.Link>
-                </>
-              )}
-            </Nav>
-          </Navbar.Collapse>
+          <div className="header-content">
+            <Navbar.Brand as={Link} to='/'>
+              Mindfulness Memoir
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls='navbar' />
+            <Navbar.Collapse id='navbar'>
+              <Nav className='ml-auto'>
+                <Nav.Link as={Link} to='/resources'>
+                  Resources
+                </Nav.Link>
+                {Auth.loggedIn() ? (
+                  <>
+                    <Nav.Link as={Link} to='/myDaily'>
+                      Make Your Daily Entry Here
+                    </Nav.Link>
+                    <Nav.Link as={Link} to='/myJournal'>
+                      My Journal Entries
+                    </Nav.Link>
+                    <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  </>
+                ) : (
+                  <>
+                    <Nav.Link onClick={openLoginModal}>Login</Nav.Link>
+                    <Nav.Link onClick={openSignupModal}>Sign Up</Nav.Link>
+                  </>
+                )}
+              </Nav>
+            </Navbar.Collapse>
+          </div>
         </Container>
       </Navbar>
 
