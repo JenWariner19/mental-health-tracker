@@ -15,9 +15,11 @@ const ThoughtList = ({
   return (
     <div className="thought-list-container">
       {showTitle && <h3>{title}</h3>}
+      <div className="row">
       {thoughts &&
         thoughts.map((thought) => (
-          <div key={thought._id} className="card mb-3">
+          <div key={thought._id} className="col-md-4 mb-3">
+            <div className="card h-100">
             <h4 className="card-header text-light p-2 m-0">
               {showUsername ? (
                 <Link
@@ -47,7 +49,9 @@ const ThoughtList = ({
               Add Comment
             </Link>
           </div>
+          </div>
         ))}
+    </div>
     </div>
   );
 };
