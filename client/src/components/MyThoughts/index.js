@@ -15,8 +15,8 @@ const MyThoughts = () => {
   const [updatedThought, setUpdatedThought] = useState("");
   const [editingThoughtId, setEditingThoughtId] = useState("");
   const [clearedTextarea, setClearedTextarea] = useState(false);
-  const [updateThought] = useMutation(UPDATE_THOUGHT);
-  const [deleteThought] = useMutation(REMOVE_THOUGHT);
+  const [updateThought, {error}] = useMutation(UPDATE_THOUGHT);
+  const [deleteThought, {err}] = useMutation(REMOVE_THOUGHT);
 
   if (!myThoughts.length) {
     return <h3>No Thoughts Yet</h3>;
@@ -91,13 +91,13 @@ const MyThoughts = () => {
                       />
                       <div>
                         <button
-                          className="btn btn-primary btn-block btn-squared"
+                          className="btn btn-primary btn-block btn-squared m-1"
                           onClick={() => onUpdate(thought._id)}
                         >
                           Save
                         </button>
                         <button
-                          className="btn btn-primary btn-block btn-squared"
+                          className="btn btn-primary btn-block btn-squared m-1"
                           onClick={() => handleCancel()}
                         >
                           Cancel
@@ -110,7 +110,7 @@ const MyThoughts = () => {
                 </div>
                 {editingThoughtId !== thought._id && (
                   <button
-                    className="btn btn-primary btn-block btn-squared"
+                    className="btn btn-primary btn-block btn-squared mb-1"
                     onClick={() => handleUpdatingThought(thought._id)}
                   >
                     Update
@@ -126,6 +126,16 @@ const MyThoughts = () => {
             </div>
           ))}
       </div>
+      {error && (
+          <div className="col-12 my-3 bg-danger text-white p-3">
+            Something went wrong...
+          </div>
+        )}
+         {err && (
+          <div className="col-12 my-3 bg-danger text-white p-3">
+            Something went wrong...
+          </div>
+        )}
     </div>
   );
 };

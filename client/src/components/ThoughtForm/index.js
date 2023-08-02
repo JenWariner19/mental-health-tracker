@@ -8,14 +8,11 @@ const ThoughtForm = () => {
     thoughtText: "",
   });
 
-  // Set up our mutation with an option to handle errors
   const [addThought, { error }] = useMutation(ADD_THOUGHT);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    // On form submit, perform mutation and pass in form data object as arguments
-    // It is important that the object fields are match the defined parameters in `ADD_THOUGHT` mutation
     try {
       if (!formState.thoughtText) {
         alert("You must enter thought text!");
