@@ -20,7 +20,7 @@ const CheckboxList = () => {
 
   return (
     <div>
-      <h2>Self-Care Checklist</h2>
+      <h2>Did I?:</h2>
       <div>
         <input
           type="checkbox"
@@ -28,7 +28,7 @@ const CheckboxList = () => {
           checked={checkboxValues.workout}
           onChange={handleCheckboxChange}
         />
-        <label htmlFor="workout">Did you workout?</label>
+        <label htmlFor="workout">Workout?</label>
       </div>
       <div>
         <input
@@ -37,7 +37,7 @@ const CheckboxList = () => {
           checked={checkboxValues.sunlight}
           onChange={handleCheckboxChange}
         />
-        <label htmlFor="sunlight">Get sunlight?</label>
+        <label htmlFor="sunlight">Get Sunlight?</label>
       </div>
       <div>
         <input
@@ -46,7 +46,7 @@ const CheckboxList = () => {
           checked={checkboxValues.supplements}
           onChange={handleCheckboxChange}
         />
-        <label htmlFor="supplements">Take supplements?</label>
+        <label htmlFor="supplements">Take My Supplements?</label>
       </div>
       <div>
         <input
@@ -55,7 +55,7 @@ const CheckboxList = () => {
           checked={checkboxValues.selfCare}
           onChange={handleCheckboxChange}
         />
-        <label htmlFor="selfCare">Self-care?</label>
+        <label htmlFor="selfCare">Self-Care Routine?</label>
       </div>
     </div>
   );

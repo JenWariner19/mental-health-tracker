@@ -22,3 +22,5 @@ const MyDaily = () => {(
 )
 
 };
+
+export default MyDaily;
