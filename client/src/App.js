@@ -13,6 +13,7 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import MyJournalEntries from './pages/MyJournal';
 import Home from "./pages/Home";
+import MyDaily from "./pages/MyDaily";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -44,6 +45,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/myJournal" element={<MyJournalEntries />} />
             {/* Add more routes for other pages here */}
+            <Route path="/myDaily" element={<MyDaily />} />
 
           </Routes>
         </div>
