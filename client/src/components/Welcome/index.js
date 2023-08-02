@@ -18,7 +18,7 @@ const WelcomeMessage = () => {
     return (
       <div className="container">
         <div className="image-block">
-          <img src="/mental-health.png" alt="lightbulb" />
+          <img src="./mental-logo.png" alt="lightbulb" />
         </div>
         <div className="text-block">
           <h2>{`Welcome ${user.username}!`}</h2>
