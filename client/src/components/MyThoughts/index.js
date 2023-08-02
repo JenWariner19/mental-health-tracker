@@ -53,11 +53,13 @@ const MyThoughts = () => {
 
   const onDelete = async (thoughtId) => {
     try {
-      await deleteThought({
-        variables: { thoughtId: thoughtId },
-      });
-      // Refresh the page or update the thought list after deletion
-      window.location.reload();
+      if (window.confirm("Are you sure you want to delete this thought?")) {
+        await deleteThought({
+            variables: { thoughtId: thoughtId },
+          });
+          // Refresh the page or update the thought list after deletion
+          window.location.reload();
+      } 
     } catch (err) {
       console.error(err);
     }
