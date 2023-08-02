@@ -9,16 +9,16 @@ import SleepCheckbox from './Sleep';
 
 import Auth from '../../utils/auth';
 
-const MyDaily = () => {(
-    <div>
-    <CheckboxList />
-    <MoodButton />
-    <WaterIntakeCheckbox />
-    <MyThoughts />
-    <SleepCheckbox />
+const MyDaily = () => {
+    return (
+        <div className="header-content">
+    <div> <CheckboxList /> </div>
+    <div> <MoodButton /> </div>
+   <div> <WaterIntakeCheckbox /> </div>
+  <div> <MyThoughts /> </div>
+  <div>  <SleepCheckbox /> </div>
     </div>
-
-
-)
-
+    );
 };
+
+export default MyDaily;

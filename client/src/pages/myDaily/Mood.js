@@ -24,7 +24,7 @@ const MoodButton = () => {
           ))}
         </div>
         <p>
-          {mood ? `Today's mood: ${mood}` : 'Please select your mood'}
+          {mood ? `Today's mood: ${mood}` : 'Please enter how you feel today.'}
         </p>
       </div>
     );
