@@ -4,8 +4,10 @@ import { Container, Card, Button, Row, Col } from "react-bootstrap";
 import Auth from "../../utils/auth";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
-import { REMOVE_JOURNAL } from '../../utils/mutations';
+import { REMOVE_JOURNAL, REMOVE_THOUGHT } from '../../utils/mutations';
+import MyThoughts from "../../components/MyThoughts";
 import './myJournal.css';
+import ThoughtForm from "../../components/ThoughtForm";
 
 const MyJournal = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -89,6 +91,11 @@ const MyJournal = () => {
           })}
         </div>
       </Container>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+          <ThoughtForm />
+          <h3>My Thoughts</h3>
+          <MyThoughts />
+        </div>
     </div>
   );
 };
