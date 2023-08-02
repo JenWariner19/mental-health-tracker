@@ -29,7 +29,7 @@ const AppNavbar = () => {
 
   return (
     <>
-     <Navbar>
+     <Navbar expand="md" collapseOnSelect>
         <Container fluid>
           <div className="header-content">
             <Navbar.Brand as={Link} to='/'>
