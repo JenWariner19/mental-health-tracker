@@ -21,6 +21,14 @@ const SleepCheckbox = () => {
     }
   };
 
+  const handleAddHour = () => {
+    setSleepHours(prevSleepHours => (parseFloat(prevSleepHours) + 1).toFixed(2));
+  };
+
+  const handleSubtractHour = () => {
+    setSleepHours(prevSleepHours => (parseFloat(prevSleepHours) - 1).toFixed(2));
+  };
+
   return (
     <div>
       <label>
@@ -31,8 +39,12 @@ const SleepCheckbox = () => {
         />
         I slept for {sleepHours} hours.
       </label>
+      <br />
+      <button onClick={handleAddHour}>+</button>
+      <button onClick={handleSubtractHour}>-</button>
     </div>
   );
 };
 
 export default SleepCheckbox;
+
