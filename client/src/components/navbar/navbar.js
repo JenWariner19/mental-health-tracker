@@ -11,7 +11,7 @@ const AppNavbar = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignupModal, setShowSignupModal] = useState(false);
 
-  const openLoginModal = () => {
+ const openLoginModal = () => {
     setShowLoginModal(true);
   };
 

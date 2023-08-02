@@ -33,6 +33,7 @@ const LoginForm = ({ handleModalClose }) => {
 
       Auth.login(data.login.token);
       handleModalClose();
+      window.location.reload();
     } catch (err) {
       console.error(err);
       setShowAlert(true);

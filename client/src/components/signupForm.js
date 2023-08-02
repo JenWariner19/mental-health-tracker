@@ -33,6 +33,7 @@ const SignupForm = ({ handleModalClose }) => {
 
       Auth.login(data.addUser.token);
       handleModalClose();
+      window.location.reload();
     } catch (err) {
       console.error(err);
       setShowAlert(true);

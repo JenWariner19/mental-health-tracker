@@ -13,6 +13,7 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import MyJournalEntries from './pages/MyJournal';
 import Home from "./pages/Home";
+import SingleThought from "./pages/SingleThought";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -40,11 +41,9 @@ function App() {
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Navbar />
           <Routes>
-
             <Route path="/" element={<Home />} />
             <Route path="/myJournal" element={<MyJournalEntries />} />
-            {/* Add more routes for other pages here */}
-
+            <Route path="/thoughts/:thoughtId" element={<SingleThought />}/>
           </Routes>
         </div>
       </Router>
