@@ -13,7 +13,7 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import MyJournalEntries from './pages/MyJournal';
 import Home from "./pages/Home";
-import MyDaily from "./pages/MyDaily";
+import MyDaily from "./pages/myDaily/MyDaily";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
