@@ -4,6 +4,7 @@ import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { QUERY_ME, QUERY_USER } from "../../utils/queries";
 import { UPDATE_THOUGHT, REMOVE_THOUGHT } from "../../utils/mutations";
+import "./mythoughts.css";
 
 const MyThoughts = () => {
   const { username: userParam } = useParams();
@@ -65,8 +66,8 @@ const MyThoughts = () => {
     }
   };
   return (
-    <div className="thought-list-container d-flex align-items-start">
-      <div className="row justify-content-center">
+    <div className="thought-list-container d-flex flex-wrap">
+      <div className="row">
         {myThoughts &&
           myThoughts.map((thought) => (
             <div key={thought._id} className="col-md-4 mb-3">
@@ -78,7 +79,7 @@ const MyThoughts = () => {
                     </span>
                   </>
                 </h4>
-                <div className="card-body bg-light p-2">
+                <div className="card-body p-2">
                   {editingThoughtId !== null &&
                   editingThoughtId === thought._id ? (
                     <div>
@@ -110,31 +111,37 @@ const MyThoughts = () => {
                     <p>{thought.thoughtText}</p>
                   )}
                 </div>
+                <div className="button-container d-flex justify-content-center">
                 {editingThoughtId !== thought._id && (
+                  <div className="button-wrapper">
                   <button
                     className="btn btn-primary btn-block btn-squared mb-1"
                     onClick={() => handleUpdatingThought(thought._id)}
                   >
                     Update
                   </button>
+                  </div>
                 )}
+                <div className="button-wrapper">
                 <button
                   className="btn btn-primary btn-block btn-squared"
                   onClick={() => onDelete(thought._id)}
                 >
                   Delete
                 </button>
+                </div>
+                </div>
               </div>
             </div>
           ))}
       </div>
       {error && (
-          <div className="col-12 my-3 bg-danger text-white p-3">
+          <div className="card col-12 my-3 bg-danger text-white p-3">
             Something went wrong...
           </div>
         )}
          {err && (
-          <div className="col-12 my-3 bg-danger text-white p-3">
+          <div className="card col-12 my-3 bg-danger text-white p-3">
             Something went wrong...
           </div>
         )}
