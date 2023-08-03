@@ -93,7 +93,7 @@ const MyJournal = () => {
       </Container>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
           <ThoughtForm />
-          <h3 style={{ textDecoration: 'underline'}}>My Thoughts</h3>
+          <h3 style={{ textDecoration: 'underline', fontSize: '32px' }}>My Thoughts</h3>
           <MyThoughts />
         </div>
     </div>
