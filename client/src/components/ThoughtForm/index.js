@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
+import './thoughtform.css';
 
 import { ADD_THOUGHT } from "../../utils/mutations";
 
@@ -41,13 +42,13 @@ const ThoughtForm = () => {
   return (
     <div className="card w-75">
       <h3 className="card-header text-light p-2 m-0">
-        Create a new thought...
+      Unlock the Power of Your Mind: Share Your Thoughts Now!
       </h3>
       <form
         className="flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
       >
-        <div className="col-12 card-body bg-light p-2">
+        <div className="col-12 card-body p-2">
           <textarea
             name="thoughtText"
             placeholder="Here's a new thought..."

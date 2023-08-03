@@ -21,7 +21,7 @@ const WelcomeMessage = () => {
           <img src="./mental-logo.png" alt="lightbulb" />
         </div>
         <div className="text-block">
-          <h2 className="header">{`Welcome ${user.username}!`}</h2>
+          <h2 className="header">{`Welcome, ${user.username}!`}</h2>
           <p className="text">We're thrilled to see you here, and we want to make sure you make the most of your experience on our mental health platform. This is your safe haven to express yourself openly. Share your thoughts, connect with others, and track your daily routine for personal growth. Explore our valuable mental health resources whenever you need support. This platform is yours to explore and find solace in, knowing that you're not alone on your journey to well-being. Embrace the support of this caring community and remember that every step forward is a testament to your resilience and strength. Together, we can create a space of understanding and empathy where we can all thrive.</p>
         </div>
       </div>

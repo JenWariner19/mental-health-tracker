@@ -64,7 +64,7 @@ const CommentForm = ({ thoughtId }) => {
 
   return (
     <div>
-      <h4>Add a comment...</h4>
+      <h4>Join the Conversation: Comment Below</h4>
 
       {Auth.loggedIn() ? (
         <>
@@ -74,7 +74,7 @@ const CommentForm = ({ thoughtId }) => {
             }`}
           >
             Character Count: {characterCount}/280
-            {error && <span className="ml-2">{error.message}</span>}
+            {error && <span className="ml-2"> {error.message}</span>}
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
@@ -86,7 +86,7 @@ const CommentForm = ({ thoughtId }) => {
                 placeholder="Add your comment..."
                 value={commentText}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '1.5', resize: 'vertical', padding:'3px' }}
                 onChange={handleChange}
               ></textarea>
             </div>

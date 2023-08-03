@@ -28,7 +28,7 @@ const SingleThought = () => {
   }
   return (
     <div className="my-3">
-      <h3 className="card-header text-light p-3 m-0">
+      <h3 className="card-header text-light p-3 m-2 m-0">
         {thought.thoughtAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
           had this thought on {thought.createdAt}
