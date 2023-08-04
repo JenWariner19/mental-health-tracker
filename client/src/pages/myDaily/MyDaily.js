@@ -56,6 +56,9 @@ const MyDaily = () => {
   return (
     <div className="header-content">
       <div>
+        <h2>Write your daily journal entry here:</h2>
+      </div>
+      <div>
         <CheckboxList checkboxValues={checkboxValues} setCheckboxValues={setCheckboxValues} />
       </div>
       <div>
