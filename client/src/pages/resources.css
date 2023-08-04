@@ -1,0 +1,53 @@
+.message {
+    font-size: 24px;
+    margin: 20px;
+    background-color: #11b8b1;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+.emergency {
+    margin: 25px;
+    font-size: 20px;
+    color: red;
+}
+
+.health-header {
+    margin: 25px;
+    text-decoration: underline;
+}
+
+.link-items {
+    background-color: #faae56;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    display: block; 
+    margin-bottom: 5px;
+  }
+
+  .link-items:hover {
+    background-color: #11b8b1;
+  }
+
+  .link-text {
+    color:white;
+    font-size: 20px;
+  }
+
+  .donate-message {
+    font-size: 28px;
+  }
+
+  .donate-message-link {
+    font-size: 22px;
+    background-color: #11b8b1;
+    color: white;
+    padding: 10px; 
+    border-radius: 5px;
+  }
+
+  .donate-message-link:hover {
+    background-color: #faae56;
+  }
