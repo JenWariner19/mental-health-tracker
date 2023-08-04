@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useQuery, useMutation } from "@apollo/client";
-import { ADD_JOURNAL_ENTRY } from "../../utils/mutations";
-import CheckboxList from '../../components/myDaily/Checklist';
-import MoodButton from '../../components/myDaily/Mood';
-import WaterIntakeCheckbox from '../../components/myDaily/Water';
-import Gratefuls from '../../components/myDaily/Gratefuls';
-import SleepCheckbox from '../../components/myDaily/Sleep';
+
+import CheckboxList from './Checklist';
+import MoodButton from './Mood';
+import WaterIntakeCheckbox from './Water';
+import MyThoughts from './MyJournalThoughts';
+import SleepCheckbox from './Sleep';
 
 import Auth from '../../utils/auth';
 
@@ -85,14 +84,7 @@ const MyDaily = () => {
           </div>
         )}
     </div>
-  );
+    );
 };
 
 export default MyDaily;
-// Each child component will need to be modified to call the setter functions passed down to them when the user makes a selection/input.
-
-
-
-
-
-

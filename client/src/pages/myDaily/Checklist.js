@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const CheckboxList = ({ checkboxValues, setCheckboxValues }) => {
@@ -25,6 +26,7 @@ const CheckboxList = ({ checkboxValues, setCheckboxValues }) => {
           <label htmlFor={name}>{name}</label>
         </div>
       ))}
+
     </div>
   );
 };

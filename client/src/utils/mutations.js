@@ -103,6 +103,7 @@ mutation updateJournal($journalEntryId: ID!, $mood: String!, $checkList: CheckLi
       waterIntake
       gratefuls
       sleep
+      notes
     }
   }
 }
@@ -148,6 +149,7 @@ mutation removeJournal($journalEntryId: ID!) {
       waterIntake
       gratefuls
       sleep
+      notes
     }
   }
 }
