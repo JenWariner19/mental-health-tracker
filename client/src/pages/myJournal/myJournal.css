@@ -1,60 +1,73 @@
 .my-journal {
-    text-align: center;
-    padding: 20px;
-    min-height: calc(100vh - 100px); /* Adjust the value based on your footer's height */
-  }
+  text-align: center;
+  padding: 20px;
+  min-height: calc(100vh - 100px); 
+}
+
+.month-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.calendar-container {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+
+.calendar-flex-container {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 10px; 
+}
+
+.day {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: calc(100% / 7 - 10px); 
+  min-height: 150px; 
+  display: flex;
+  flex-direction: column;
+}
+
+
+.date-header {
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+
+.thoughts-section {
+  flex: 1;
   
-  .month-header {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
+}
+
+
+@media (max-width: 1200px) {
   .calendar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    padding: 20px;
+    width: 90%; 
   }
-  
-  .days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-  }
-  
+
   .day {
-    border: 1px solid #ccc;
-    padding: 10px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
+    width: calc(100% / 4 - 10px); 
   }
-  
-  .day-0, .day-6 {
-    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .calendar-container {
+    width: 100%; 
   }
-  
-  .date {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
+
+  .day {
+    width: calc(100% / 2 - 10px); 
   }
-  
-  .emoji {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .entry {
-    margin-top: 10px;
-  }
-  
-  .no-entry {
-    font-style: italic;
-    color: #888;
-  }
-  
+}
