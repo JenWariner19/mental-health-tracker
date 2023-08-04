@@ -39,6 +39,28 @@ mutation addThought($thoughtText: String!) {
 }
 `;
 
+export const ADD_JOURNAL_ENTRY = gql`
+mutation addJournalEntry($mood: String!, $checkList: CheckListInput, $waterIntake: Int, $gratefuls: String, $sleep: String) {
+  addJournalEntry(mood: $mood, checkList: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
+    _id
+    journalEntries {
+      _id
+      date
+      mood
+      checkList {
+        workout
+        sunlight
+        supplements
+        selfCare
+      }
+      waterIntake
+      gratefuls
+      sleep
+    }
+  }
+}
+`;
+
 export const ADD_COMMENT = gql`
 mutation addComment($thoughtId: ID!, $commentText: String!) {
   addComment(thoughtId: $thoughtId, commentText: $commentText) {
@@ -65,15 +87,19 @@ mutation updateThought($thoughtId: ID!, $thoughtText: String!) {
 `;
 
 export const UPDATE_JOURNAL = gql`
-mutation updateJournal($journalEntryId: ID!, $mood: String!, $toDoList: String, $morningRoutine: String, $waterIntake: Int, $gratefuls: String, $sleep: Int, $notes: String) {
-  updateJournalEntry(journalEntryId: $journalEntryId, mood: $mood, toDoList: $toDoList, morningRoutine: $morningRoutine, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep, notes: $notes) {
+mutation updateJournal($journalEntryId: ID!, $mood: String!, $checkList: CheckListInput, $waterIntake: Int, $gratefuls: String, $sleep: String) {
+  updateJournalEntry(journalEntryId: $journalEntryId, mood: $mood, checkList: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
     _id
     journalEntries {
       _id
       date
       mood
-      toDoList
-      morningRoutine
+      checkList {
+        workout
+        sunlight
+        supplements
+        selfCare
+      }
       waterIntake
       gratefuls
       sleep
@@ -114,8 +140,12 @@ mutation removeJournal($journalEntryId: ID!) {
       _id
       date
       mood
-      toDoList
-      morningRoutine
+      checkList {
+        workout
+        sunlight
+        supplements
+        selfCare
+      }
       waterIntake
       gratefuls
       sleep

@@ -16,6 +16,7 @@ import Home from "./pages/Home";
 import SingleThought from "./pages/SingleThought";
 import MyDaily from "./pages/myDaily/MyDaily";
 import Resources from "./pages/Resources";
+import SingleJournalEntry from "./pages/SinlgeJournalEntry";
 
 
 
@@ -50,6 +51,7 @@ function App() {
             <Route path="/thoughts/:thoughtId" element={<SingleThought />}/>
             <Route path="/myDaily" element={<MyDaily />} />
             <Route path="/Resources" element={<Resources />} />
+            <Route path="/singleJournalEntry/:journalEntryId" element={<SingleJournalEntry />} />
           </Routes>
         </div>
       </Router>

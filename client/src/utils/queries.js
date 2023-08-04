@@ -15,8 +15,12 @@ query user($username: String!) {
         _id
         date
         mood
-        toDoList
-        morningRoutine
+        checkList {
+          workout
+          sunlight
+          supplements
+          selfCare
+        }
         waterIntake
         gratefuls
         sleep
@@ -70,8 +74,12 @@ query Me {
         _id
         date
         mood
-        toDoList
-        morningRoutine
+        checkList {
+          workout
+          sunlight
+          supplements
+          selfCare
+        }
         waterIntake
         gratefuls
         sleep

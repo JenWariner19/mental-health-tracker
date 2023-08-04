@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
-const SleepCheckbox = () => {
+const SleepCheckbox = ({ setSleep, sleep }) => {
   const [isChecked, setIsChecked] = useState(false);
-  const [sleepHours, setSleepHours] = useState(0);
   const [sleepStartTime, setSleepStartTime] = useState(null);
 
   const handleCheckboxChange = () => {
@@ -16,17 +15,17 @@ const SleepCheckbox = () => {
         const wakeUpTime = new Date();
         const timeDifference = wakeUpTime - sleepStartTime;
         const hours = timeDifference / (1000 * 60 * 60); // Convert milliseconds to hours
-        setSleepHours(hours.toFixed(2));
+        setSleep(hours.toFixed(2));
       }
     }
   };
 
   const handleAddHour = () => {
-    setSleepHours(prevSleepHours => (parseFloat(prevSleepHours) + 1).toFixed(2));
+    setSleep(prevSleepHours => (parseFloat(prevSleepHours) + 1).toFixed(2));
   };
 
   const handleSubtractHour = () => {
-    setSleepHours(prevSleepHours => (parseFloat(prevSleepHours) - 1).toFixed(2));
+    setSleep(prevSleepHours => (parseFloat(prevSleepHours) - 1).toFixed(2));
   };
 
   return (
@@ -37,7 +36,8 @@ const SleepCheckbox = () => {
           checked={isChecked}
           onChange={handleCheckboxChange}
         />
-        I slept for {sleepHours} hours.
+        I slept for {sleep} hours.
+
       </label>
       <br />
       <button onClick={handleAddHour}>+</button>
@@ -47,4 +47,3 @@ const SleepCheckbox = () => {
 };
 
 export default SleepCheckbox;
-

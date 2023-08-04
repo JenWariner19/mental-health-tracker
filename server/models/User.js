@@ -25,9 +25,6 @@ const journalEntrySchema = new Schema({
     type: String,
   },
   sleep: {
-    type: Number,
-  },
-  notes: {
     type: String,
   }
 });

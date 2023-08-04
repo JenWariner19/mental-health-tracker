@@ -96,7 +96,7 @@ const resolvers = {
             notes: notes
            } } },
           { new: true }
-        ).populate('thoughts');
+        );
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -120,15 +120,13 @@ const resolvers = {
     
         return User.findOneAndUpdate(
           { _id: context.user._id, 'journalEntries._id': journalEntryId },
-          { $set: { journalEntries: { 
-            mood: mood,
-            toDoList: toDoList,
-            morningRoutine: morningRoutine,
-            waterIntake: waterIntake,
-            gratefuls: gratefuls,
-            sleep: sleep,
-            notes: notes
-           } } },
+          { $set: { 
+            'journalEntries.$.mood': mood,
+            'journalEntries.$.checkList': checkList,
+            'journalEntries.$.waterIntake': waterIntake,
+            'journalEntries.$.gratefuls': gratefuls,
+            'journalEntries.$.sleep': sleep
+          } },
           { new: true }
         );
       }
