@@ -30,18 +30,23 @@ const typeDefs = gql`
     _id: ID
     date: String!
     mood: String!
-    toDoList: String
-    morningRoutine: String
+    checkList: CheckListInput
     waterIntake: Int
     gratefuls: String
     sleep: Int
-    notes: String
   }
 
   type Auth {
     token: ID!
     user: User
   }
+
+  input CheckListInput {
+  workout: Boolean,
+  sunlight: Boolean,
+  supplements: Boolean,
+  selfCare: Boolean
+}
 
   type Query {
     users: [User]
@@ -58,23 +63,19 @@ const typeDefs = gql`
     addComment(thoughtId: ID!, commentText: String!): Thought
     addJournalEntry(
       mood: String!,
-      toDoList: String,
-      morningRoutine: String,
+      checkList: CheckListInput,
       waterIntake: Int,
       gratefuls: String,
-      sleep: Int,
-      notes: String
+      sleep: Int
       ): User
     updateThought(thoughtId: ID!, thoughtText: String!): Thought
     updateJournalEntry(
       journalEntryId: ID!,
       mood: String!,
-      toDoList: String,
-      morningRoutine: String,
+      checkList: CheckListInput,
       waterIntake: Int,
       gratefuls: String,
-      sleep: Int,
-      notes: String
+      sleep: Int
       ) : User
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought
