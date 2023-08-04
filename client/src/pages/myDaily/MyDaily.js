@@ -11,7 +11,7 @@ import CheckboxList from './Checklist';
 
 const MyDaily = () => {
   const [addJournalEntry, { error }] = useMutation(ADD_JOURNAL_ENTRY);
-
+  
   const [checkboxValues, setCheckboxValues] = useState({
     workout: false,
     sunlight: false,
