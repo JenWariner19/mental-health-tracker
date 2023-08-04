@@ -1,43 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .my-journal {
   text-align: center;
   padding: 20px;
-  min-height: calc(100vh - 100px); 
+  min-height: calc(100vh - 100px);
 }
 
 .month-header {
-  font-size: 24px;
+  font-family: 'Pacifico', cursive;
+  font-size: 32px;
   font-weight: bold;
   margin-bottom: 10px;
+  background-color: #faae56;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-shadow: 2px 2px 4px black;
 }
 
 .calendar-container {
-  width: 80%;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  padding: 20px;
+  padding: 10px;
+  background-color: #ECEBEB;
 }
-
 
 .calendar-flex-container {
   display: flex;
-  flex-direction: row; 
-  flex-wrap: wrap; 
-  justify-content: center; 
-  gap: 10px; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
 }
 
 .day {
-  border: 1px solid #ccc;
+  border: 3px solid #faae56;
   padding: 10px;
-  width: calc(100% / 7 - 10px); 
-  min-height: 150px; 
+  width: calc(100% / 7 - 10px);
+  min-height: 150px;
   display: flex;
   flex-direction: column;
+  
 }
 
-
 .date-header {
-  background-color: teal;
+  background-color: #11b8b1;
   color: white;
   font-weight: bold;
   padding: 5px;
@@ -45,29 +50,26 @@
   margin-bottom: 10px;
 }
 
-
 .thoughts-section {
   flex: 1;
-  
 }
-
 
 @media (max-width: 1200px) {
   .calendar-container {
-    width: 90%; 
+    width: 90%;
   }
 
   .day {
-    width: calc(100% / 4 - 10px); 
+    width: calc(100% / 4 - 10px);
   }
 }
 
 @media (max-width: 768px) {
   .calendar-container {
-    width: 100%; 
+    width: 100%;
   }
 
   .day {
-    width: calc(100% / 2 - 10px); 
+    width: calc(100% / 2 - 10px);
   }
 }
