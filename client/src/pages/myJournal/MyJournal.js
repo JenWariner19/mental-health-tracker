@@ -1,4 +1,4 @@
-// MyJournal.js
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button } from "react-bootstrap";
@@ -8,6 +8,7 @@ import { QUERY_ME } from "../../utils/queries";
 import { REMOVE_JOURNAL } from '../../utils/mutations';
 import MyThoughts from "../../components/MyThoughts";
 import './myJournal.css';
+import ThoughtForm from "../../components/ThoughtForm";
 
 const MyJournal = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -64,7 +65,8 @@ const MyJournal = () => {
       <h2 className="month-header">
         {new Date().toLocaleString("default", { month: "long" })} {new Date().getFullYear()}
       </h2>
-      <Container className="calendar-container mt-5 mb-3">
+     <Container>
+      <div className="calendar-container mt-5 mb-3" style={{ backgroundColor: '#ECEBEB' }}>
         <div className="days">
           {/* Change the display to 'flex' */}
           <div className="calendar-flex-container">
@@ -96,8 +98,10 @@ const MyJournal = () => {
             })}
           </div>
         </div>
+      </div>
       </Container>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <ThoughtForm />
         <h3 style={{ textDecoration: 'underline', fontSize: '32px' }}>My Thoughts</h3>
         <MyThoughts />
       </div>

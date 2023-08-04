@@ -44,10 +44,10 @@ const AppNavbar = () => {
                 {Auth.loggedIn() ? (
                   <>
                     <Nav.Link as={Link} to='/myDaily'>
-                      Make Your Daily Entry Here
+                      Daily Checklist
                     </Nav.Link>
                     <Nav.Link as={Link} to='/myJournal'>
-                      My Journal Entries
+                      My Journal
                     </Nav.Link>
                     <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                   </>

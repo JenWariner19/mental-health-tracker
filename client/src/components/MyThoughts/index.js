@@ -66,12 +66,12 @@ const MyThoughts = () => {
     }
   };
   return (
-    <div className="thought-list-container d-flex flex-wrap">
+    <div className="mythought-list-container d-flex flex-wrap">
       <div className="row">
         {myThoughts &&
           myThoughts.map((thought) => (
             <div key={thought._id} className="col-md-4 mb-3">
-              <div className="card h-100">
+              <div className="card mycard h-100">
                 <h4 className="card-header text-light p-2 m-0">
                   <>
                     <span style={{ fontSize: "1rem" }}>
@@ -136,12 +136,12 @@ const MyThoughts = () => {
           ))}
       </div>
       {error && (
-          <div className="card col-12 my-3 bg-danger text-white p-3">
+          <div className="mycard col-12 my-3 bg-danger text-white p-3">
             Something went wrong...
           </div>
         )}
          {err && (
-          <div className="card col-12 my-3 bg-danger text-white p-3">
+          <div className="mycard col-12 my-3 bg-danger text-white p-3">
             Something went wrong...
           </div>
         )}
