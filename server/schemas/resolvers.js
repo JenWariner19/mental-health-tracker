@@ -91,8 +91,7 @@ const resolvers = {
             checkList: checkList,
             waterIntake: waterIntake,
             gratefuls: gratefuls,
-            sleep: sleep,
-            notes: notes
+            sleep: sleep
            } } },
           { new: true }
         );
