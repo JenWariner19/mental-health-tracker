@@ -1,51 +1,63 @@
-.thought-list-container {
+.mythought-list-container {
     margin-top: 20px;
     background-color: #fff;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    min-height: auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 50vh;
   }
   
-  .card {
+  .mycard {
     height: 400px;
     width: 400px;
     flex: 0 0 calc(33.3333% - 20px);
+    border: 1px solid black;
+    border-radius: 5px;
     margin: 20px;
   }
+  
+  .mycard-header {
+    background-color: #11b8b1;
+    border-radius: 5px 5px 0px 0px;
+  }
 
+  .mycard-body {
+    border: 1px solid black;
+    padding: 20px;
+    height: 150px;
+  }
+  
+  .button-container {
+    display: flex; 
+    justify-content: center;
+  }
+  
   .button-wrapper {
-    flex: 1;
-    margin: 2px 5px; 
+    margin: 2px 5px;
   }
   
   .button-wrapper button {
     width: 100%;
     height: 100%;
   }
-
-  .button-container button:last-child {
-    margin-right: 0; 
-  }
-
+  
   @media (max-width: 767px) {
-    .card {
+    .mycard {
       width: 100%;
       max-width: 400px;
-      height: auto;
     }
   }
-
+  
   @media (min-width: 768px) {
-    .card {
+    .mycard {
       flex-basis: 0 0 calc(50% - 40px);
     }
   }
-
+  
   @media (min-width: 992px) {
-    .card {
+    .mycard {
       flex-basis: 0 0 calc(33.3333% - 40px);
     }
   }
