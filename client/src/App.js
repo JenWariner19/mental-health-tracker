@@ -15,6 +15,8 @@ import MyJournalEntries from './pages/myJournal/MyJournal';
 import Home from "./pages/Home";
 import SingleThought from "./pages/SingleThought";
 import MyDaily from "./pages/myDaily/MyDaily";
+import Resources from "./pages/Resources";
+
 
 
 const httpLink = createHttpLink({
@@ -47,6 +49,7 @@ function App() {
             <Route path="/myJournal" element={<MyJournalEntries />} />
             <Route path="/thoughts/:thoughtId" element={<SingleThought />}/>
             <Route path="/myDaily" element={<MyDaily />} />
+            <Route path="/Resources" element={<Resources />} />
           </Routes>
         </div>
       </Router>
