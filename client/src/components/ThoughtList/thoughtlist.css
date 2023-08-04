@@ -4,14 +4,15 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 50vh;
   }
 
   .thought-list-container h3 {
     text-decoration: underline;
     font-size: 40px;
+    text-align: left;
   }
 
   .card {
@@ -37,12 +38,12 @@
 
   @media (max-width: 992px) {
     .card {
-      flex-basis: calc(50% - 20px);
+      flex-basis: calc(50% - 40px);
     }
   }
   
   @media (max-width: 768px) {
     .card {
-      flex-basis: calc(100% - 20px);
+      flex-basis: calc(100% - 40px);
     }
   }
