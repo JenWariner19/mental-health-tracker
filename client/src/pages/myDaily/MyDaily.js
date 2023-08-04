@@ -19,56 +19,56 @@ const MyDaily = () => {
     supplements: false,
     selfCare: false,
   });
-  const [mood, setMood] = useState(null);
+  const [mood, setMood] = useState("");
   const [waterIntake, setWaterIntake] = useState(0);
   const [gratefuls, setGratefuls] = useState('');
   const [sleep, setSleep] = useState(0);
 
-  const handleAddJournalEntry = () => {
-    const newJournalEntry = {
-        checkboxValues,
+  const handleAddJournalEntry = async () => {
+  
+    console.log({
         mood,
+        checkList: checkboxValues,
         waterIntake,
         gratefuls,
-        sleep
-      };
-  
-      console.log(newJournalEntry);
+        sleep,
+      });
+
+    try {
+      const { data } = await addJournalEntry({
+        variables: {
+            mood,
+            checkList: checkboxValues,
+            waterIntake,
+            gratefuls,
+            sleep,
+          },
+      });
     
-    addJournalEntry({
-      variables: {
-        input: {
-          checkList: checkboxValues,
-          mood,
-          waterIntake,
-          gratefuls,
-          sleep
-        }
-      }
-    });
+      console.log('New Journal Entry added successfully:', data);
+      // Clear the input fields or take some other action here...
+    } catch (error) {
+      console.error('Error adding new Journal Entry:', error);
+    }
   };
+
 
   return (
     <div className="header-content">
       <div>
         <CheckboxList checkboxValues={checkboxValues} setCheckboxValues={setCheckboxValues} />
-        {console.log(checkboxValues)}
       </div>
       <div>
         <MoodButton setMood={setMood} mood={mood}/>
-        {console.log(mood)}
       </div>
       <div>
         <WaterIntakeCheckbox setWaterIntake={setWaterIntake} waterIntake={waterIntake} />
-        {console.log(waterIntake)}
       </div>
       <div>
         <Gratefuls setGratefuls={setGratefuls} gratefuls={gratefuls} />
-        {console.log(gratefuls)}
       </div>
       <div>
         <SleepCheckbox setSleep={setSleep} sleep={sleep} />
-        {console.log(sleep)}
       </div>
       <div>
         <button

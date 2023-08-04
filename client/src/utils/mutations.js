@@ -40,14 +40,19 @@ mutation addThought($thoughtText: String!) {
 `;
 
 export const ADD_JOURNAL_ENTRY = gql`
-mutation addJournalEntry($mood: String!, $checkList: String, $waterIntake: Int, $gratefuls: String, $sleep: Int) {
+mutation addJournalEntry($mood: String!, $checkList: CheckListInput, $waterIntake: Int, $gratefuls: String, $sleep: String) {
   addJournalEntry(mood: $mood, checkList: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
     _id
     journalEntries {
       _id
       date
       mood
-      checkList
+      checkList {
+        workout
+        sunlight
+        supplements
+        selfCare
+      }
       waterIntake
       gratefuls
       sleep
@@ -82,14 +87,19 @@ mutation updateThought($thoughtId: ID!, $thoughtText: String!) {
 `;
 
 export const UPDATE_JOURNAL = gql`
-mutation updateJournal($journalEntryId: ID!, $mood: String!, $checkList: String, $waterIntake: Int, $gratefuls: String, $sleep: Int) {
+mutation updateJournal($journalEntryId: ID!, $mood: String!, $checkList: CheckListInput, $waterIntake: Int, $gratefuls: String, $sleep: String) {
   updateJournalEntry(journalEntryId: $journalEntryId, mood: $mood, checkList: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
     _id
     journalEntries {
       _id
       date
       mood
-      checkList
+      checkList {
+        workout
+        sunlight
+        supplements
+        selfCare
+      }
       waterIntake
       gratefuls
       sleep
@@ -129,7 +139,12 @@ mutation removeJournal($journalEntryId: ID!) {
       _id
       date
       mood
-      checkList
+      checkList {
+        workout
+        sunlight
+        supplements
+        selfCare
+      }
       waterIntake
       gratefuls
       sleep

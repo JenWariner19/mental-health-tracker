@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -30,10 +30,10 @@ const typeDefs = gql`
     _id: ID
     date: String!
     mood: String!
-    checkList: CheckListInput
+    checkList: CheckList
     waterIntake: Int
     gratefuls: String
-    sleep: Int
+    sleep: String
   }
 
   type Auth {
@@ -41,12 +41,19 @@ const typeDefs = gql`
     user: User
   }
 
+  type CheckList {
+    workout: Boolean
+    sunlight: Boolean
+    supplements: Boolean
+    selfCare: Boolean
+  }
+
   input CheckListInput {
-  workout: Boolean,
-  sunlight: Boolean,
-  supplements: Boolean,
-  selfCare: Boolean
-}
+    workout: Boolean
+    sunlight: Boolean
+    supplements: Boolean
+    selfCare: Boolean
+  }
 
   type Query {
     users: [User]
@@ -66,8 +73,8 @@ const typeDefs = gql`
       checkList: CheckListInput,
       waterIntake: Int,
       gratefuls: String,
-      sleep: Int
-      ): User
+      sleep: String
+    ): User
     updateThought(thoughtId: ID!, thoughtText: String!): Thought
     updateJournalEntry(
       journalEntryId: ID!,
@@ -75,8 +82,8 @@ const typeDefs = gql`
       checkList: CheckListInput,
       waterIntake: Int,
       gratefuls: String,
-      sleep: Int
-      ) : User
+      sleep: String
+    ) : User
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought
     removeJournalEntry(journalEntryId: ID!): User

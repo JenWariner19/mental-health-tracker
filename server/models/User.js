@@ -25,7 +25,7 @@ const journalEntrySchema = new Schema({
     type: String,
   },
   sleep: {
-    type: Number,
+    type: String,
   }
 });
 
