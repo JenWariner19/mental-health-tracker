@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
+import { ADD_JOURNAL_ENTRY } from '../../utils/mutations';
 
 import MoodButton from './Mood';
 import WaterIntakeCheckbox from './Water';
 import Gratefuls from './Gratefuls';
 import SleepCheckbox from './Sleep';
-
-import Auth from '../../utils/auth';
+import CheckboxList from './Checklist';
 
 const MyDaily = () => {
   const [addJournalEntry, { error }] = useMutation(ADD_JOURNAL_ENTRY);

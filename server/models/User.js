@@ -12,11 +12,11 @@ const journalEntrySchema = new Schema({
     type: String,
     required: true,
   },
-  toDoList: {
-    type: String,
-  },
-  morningRoutine: {
-    type: String,
+  checkList: {
+    workout: { type: Boolean, default: false },
+    sunlight: { type: Boolean, default: false },
+    supplements: { type: Boolean, default: false },
+    selfCare: { type: Boolean, default: false },
   },
   waterIntake: {
     type: Number,

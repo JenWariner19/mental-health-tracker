@@ -24,7 +24,6 @@ query user($username: String!) {
         waterIntake
         gratefuls
         sleep
-        notes
       }
     }
   }
@@ -83,7 +82,6 @@ query Me {
         waterIntake
         gratefuls
         sleep
-        notes
       }
     }
   }

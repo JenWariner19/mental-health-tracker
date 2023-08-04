@@ -5,11 +5,11 @@ import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import { REMOVE_JOURNAL, UPDATE_JOURNAL } from "../utils/mutations";
 
-import CheckboxList from "../components/myDaily/Checklist";
-import MoodButton from "../components/myDaily/Mood";
-import WaterIntakeCheckbox from "../components/myDaily/Water";
-import Gratefuls from "../components/myDaily/Gratefuls";
-import SleepCheckbox from "../components/myDaily/Sleep";
+import CheckboxList from "./myDaily/Checklist";
+import MoodButton from "./myDaily/Mood";
+import WaterIntakeCheckbox from "./myDaily/Water";
+import Gratefuls from "./myDaily/Gratefuls";
+import SleepCheckbox from "./myDaily/Sleep";
 
 import Auth from "../utils/auth";
 
