@@ -1,13 +1,13 @@
+// MyJournal.js
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Card, Button, Row, Col } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import Auth from "../../utils/auth";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../../utils/queries";
-import { REMOVE_JOURNAL, REMOVE_THOUGHT } from '../../utils/mutations';
+import { REMOVE_JOURNAL } from '../../utils/mutations';
 import MyThoughts from "../../components/MyThoughts";
 import './myJournal.css';
-import ThoughtForm from "../../components/ThoughtForm";
 
 const MyJournal = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -66,36 +66,41 @@ const MyJournal = () => {
       </h2>
       <Container className="calendar-container mt-5 mb-3">
         <div className="days">
-          {calendar.map((day) => {
-            const classNames = `day day-${day.dayOfWeek}`;
+          {/* Change the display to 'flex' */}
+          <div className="calendar-flex-container">
+            {calendar.map((day) => {
+              const classNames = `day day-${day.dayOfWeek}`;
 
-            return (
-              <div key={`day-${day.date}`} className={classNames}>
-                <div className="date">{new Date(day.date).getDate()}</div>
-                {day.journalEntries.map((entry) => (
-                  <div key={`entry-${entry._id}`} className="entry">
-                    <Button
-                      className="btn-block btn-danger"
-                      onClick={() => handleDeleteEntry(entry._id)}
-                    >
-                      Delete this Entry!
-                    </Button>
+              return (
+                <div key={`day-${day.date}`} className={classNames}>
+                  <div className="date-header">{new Date(day.date).toLocaleDateString()}</div>
+                  {day.journalEntries.map((entry) => (
+                    <div key={`entry-${entry._id}`} className="entry">
+                      <Button
+                        className="btn-block btn-danger"
+                        onClick={() => handleDeleteEntry(entry._id)}
+                      >
+                        Delete this Entry!
+                      </Button>
+                    </div>
+                  ))}
+                  {day.journalEntries.length === 0 && (
+                    <p className="no-entry">No journal entries for this date</p>
+                  )}
+
+                  <div className="thoughts-section">
+                    {/* Add your thoughts or emojis here */}
                   </div>
-                ))}
-                {day.journalEntries.length === 0 && (
-                  <p className="no-entry">No journal entries for this date</p>
-                )}
-                <Link to={`/daily/${day.date}`}>View Day</Link>
-              </div>
-            );
-          })}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </Container>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-          <ThoughtForm />
-          <h3 style={{ textDecoration: 'underline', fontSize: '32px' }}>My Thoughts</h3>
-          <MyThoughts />
-        </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <h3 style={{ textDecoration: 'underline', fontSize: '32px' }}>My Thoughts</h3>
+        <MyThoughts />
+      </div>
     </div>
   );
 };
