@@ -8,6 +8,7 @@ import { QUERY_ME } from "../../utils/queries";
 import { REMOVE_JOURNAL } from '../../utils/mutations';
 import MyThoughts from "../../components/MyThoughts";
 import './myJournal.css';
+import ThoughtForm from "../../components/ThoughtForm";
 
 const MyJournal = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -98,6 +99,7 @@ const MyJournal = () => {
         </div>
       </Container>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <ThoughtForm />
         <h3 style={{ textDecoration: 'underline', fontSize: '32px' }}>My Thoughts</h3>
         <MyThoughts />
       </div>
