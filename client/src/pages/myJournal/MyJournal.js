@@ -1,4 +1,4 @@
-// MyJournal.js
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button } from "react-bootstrap";
@@ -65,7 +65,8 @@ const MyJournal = () => {
       <h2 className="month-header">
         {new Date().toLocaleString("default", { month: "long" })} {new Date().getFullYear()}
       </h2>
-      <Container className="calendar-container mt-5 mb-3">
+     <Container>
+      <div className="calendar-container mt-5 mb-3" style={{ backgroundColor: '#ECEBEB' }}>
         <div className="days">
           {/* Change the display to 'flex' */}
           <div className="calendar-flex-container">
@@ -97,6 +98,7 @@ const MyJournal = () => {
             })}
           </div>
         </div>
+      </div>
       </Container>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <ThoughtForm />
