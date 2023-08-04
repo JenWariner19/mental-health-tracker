@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 
-const WaterIntakeCheckbox = ({ setWaterIntake, waterIntake }) => {
+const WaterIntakeCheckbox = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [waterCount, setWaterCount] = useState(0);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
 
   const handleIncrement = () => {
-    setWaterIntake(waterIntake + 1);
+    setWaterCount(waterCount + 1);
   };
 
   const handleDecrement = () => {
-    if (waterIntake > 0) {
-      setWaterIntake(waterIntake - 1);
+    if (waterCount > 0) {
+      setWaterCount(waterCount - 1);
     }
   };
 
@@ -29,7 +30,7 @@ const WaterIntakeCheckbox = ({ setWaterIntake, waterIntake }) => {
       </label>
       <div>
         <button onClick={handleIncrement}>+</button>
-        <span>{waterIntake} Glasses of H20</span>
+        <span>{waterCount} Glasses of H20</span>
         <button onClick={handleDecrement}>-</button>
       </div>
     </div>

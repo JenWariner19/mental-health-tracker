@@ -39,23 +39,6 @@ mutation addThought($thoughtText: String!) {
 }
 `;
 
-export const ADD_JOURNAL_ENTRY = gql`
-mutation addJournalEntry($mood: String!, $checkList: String, $waterIntake: Int, $gratefuls: String, $sleep: Int) {
-  addJournalEntry(mood: $mood, checkList: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
-    _id
-    journalEntries {
-      _id
-      date
-      mood
-      checkList
-      waterIntake
-      gratefuls
-      sleep
-    }
-  }
-}
-`;
-
 export const ADD_COMMENT = gql`
 mutation addComment($thoughtId: ID!, $commentText: String!) {
   addComment(thoughtId: $thoughtId, commentText: $commentText) {
@@ -82,17 +65,19 @@ mutation updateThought($thoughtId: ID!, $thoughtText: String!) {
 `;
 
 export const UPDATE_JOURNAL = gql`
-mutation updateJournal($journalEntryId: ID!, $mood: String!, $checkList: String, $waterIntake: Int, $gratefuls: String, $sleep: Int) {
-  updateJournalEntry(journalEntryId: $journalEntryId, mood: $mood, checkList: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
+mutation updateJournal($journalEntryId: ID!, $mood: String!, $toDoList: String, $morningRoutine: String, $waterIntake: Int, $gratefuls: String, $sleep: Int, $notes: String) {
+  updateJournalEntry(journalEntryId: $journalEntryId, mood: $mood, toDoList: $toDoList, morningRoutine: $morningRoutine, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep, notes: $notes) {
     _id
     journalEntries {
       _id
       date
       mood
-      checkList
+      toDoList
+      morningRoutine
       waterIntake
       gratefuls
       sleep
+      notes
     }
   }
 }
@@ -129,10 +114,12 @@ mutation removeJournal($journalEntryId: ID!) {
       _id
       date
       mood
-      checkList
+      toDoList
+      morningRoutine
       waterIntake
       gratefuls
       sleep
+      notes
     }
   }
 }

@@ -82,16 +82,18 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    addJournalEntry: async (parent, { mood, checkList, waterIntake, gratefuls, sleep }, context) => {
+    addJournalEntry: async (parent, { mood, toDoList, morningRoutine, waterIntake, gratefuls, sleep, notes }, context) => {
       if (context.user) {
         return User.findOneAndUpdate(
           { _id: context.user._id},
           { $addToSet: { journalEntries: { 
             mood: mood,
-            checkList: checkList,
+            toDoList: toDoList,
+            morningRoutine: morningRoutine,
             waterIntake: waterIntake,
             gratefuls: gratefuls,
-            sleep: sleep
+            sleep: sleep,
+            notes: notes
            } } },
           { new: true }
         ).populate('thoughts');
@@ -113,17 +115,19 @@ const resolvers = {
         return thought;
       }
     },
-    updateJournalEntry: async (parent, { journalEntryId, mood, checkList, waterIntake, gratefuls, sleep }, context) => {
+    updateJournalEntry: async (parent, { journalEntryId, mood, toDoList, morningRoutine, waterIntake, gratefuls, sleep, notes }, context) => {
       if (context.user) {
     
         return User.findOneAndUpdate(
           { _id: context.user._id, 'journalEntries._id': journalEntryId },
           { $set: { journalEntries: { 
             mood: mood,
-            checkList: checkList,
+            toDoList: toDoList,
+            morningRoutine: morningRoutine,
             waterIntake: waterIntake,
             gratefuls: gratefuls,
-            sleep: sleep
+            sleep: sleep,
+            notes: notes
            } } },
           { new: true }
         );
