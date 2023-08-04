@@ -17,6 +17,7 @@
   padding: 20px;
 }
 
+
 .calendar-flex-container {
   display: flex;
   flex-direction: row; 
@@ -35,7 +36,38 @@
 }
 
 
+.date-header {
+  background-color: teal;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+
 .thoughts-section {
   flex: 1;
   
+}
+
+
+@media (max-width: 1200px) {
+  .calendar-container {
+    width: 90%; 
+  }
+
+  .day {
+    width: calc(100% / 4 - 10px); 
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-container {
+    width: 100%; 
+  }
+
+  .day {
+    width: calc(100% / 2 - 10px); 
+  }
 }
