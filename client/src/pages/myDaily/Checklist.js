@@ -1,5 +1,4 @@
 
-
 const CheckboxList = ({ checkboxValues, setCheckboxValues }) => {
 
   // Handler function to update checkbox values

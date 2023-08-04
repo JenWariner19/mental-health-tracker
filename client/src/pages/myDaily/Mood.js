@@ -1,6 +1,7 @@
 import React from 'react';
 
 const MoodButton = ({ setMood, mood }) => {
+
     const handleButtonClick = (selectedMood) => {
       setMood(selectedMood);
     };

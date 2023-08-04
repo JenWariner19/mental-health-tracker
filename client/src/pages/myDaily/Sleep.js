@@ -37,6 +37,7 @@ const SleepCheckbox = ({ setSleep, sleep }) => {
           onChange={handleCheckboxChange}
         />
         I slept for {sleep} hours.
+
       </label>
       <br />
       <button onClick={handleAddHour}>+</button>

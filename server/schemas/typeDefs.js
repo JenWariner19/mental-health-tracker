@@ -70,7 +70,8 @@ const typeDefs = gql`
     addComment(thoughtId: ID!, commentText: String!): Thought
     addJournalEntry(
       mood: String!,
-      checkList: CheckListInput,
+      toDoList: String,
+      morningRoutine: String,
       waterIntake: Int,
       gratefuls: String,
       sleep: String
@@ -79,7 +80,8 @@ const typeDefs = gql`
     updateJournalEntry(
       journalEntryId: ID!,
       mood: String!,
-      checkList: CheckListInput,
+      toDoList: String,
+      morningRoutine: String,
       waterIntake: Int,
       gratefuls: String,
       sleep: String
