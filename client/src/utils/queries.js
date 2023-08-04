@@ -15,10 +15,12 @@ query user($username: String!) {
         _id
         date
         mood
-        checkList
+        toDoList
+        morningRoutine
         waterIntake
         gratefuls
         sleep
+        notes
       }
     }
   }
@@ -68,10 +70,12 @@ query Me {
         _id
         date
         mood
-        checkList
+        toDoList
+        morningRoutine
         waterIntake
         gratefuls
         sleep
+        notes
       }
     }
   }

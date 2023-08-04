@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const MoodButton = ({ setMood, mood }) => {
+const MoodButton = () => {
+    const [mood, setMood] = useState('');
+  
     const handleButtonClick = (selectedMood) => {
       setMood(selectedMood);
     };
