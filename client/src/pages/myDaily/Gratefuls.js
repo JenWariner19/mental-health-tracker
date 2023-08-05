@@ -13,8 +13,8 @@ const Gratefuls = ({ setGratefuls, gratefuls }) => {
   };
 
   return (
-    <div>
-      <h3>My Gratefuls</h3>
+    <div style={{ margin: '10px'}}>
+      <h3>Glowing with Gratitude: Enter Your Positivity Here!</h3>
       <textarea
             name="gratefulText"
             placeholder="Today I am grateful for..."
@@ -22,6 +22,7 @@ const Gratefuls = ({ setGratefuls, gratefuls }) => {
             className="form-input w-100"
             onChange={handleChange}
             rows={3}
+            style={{ margin: '10px'}}
           ></textarea>
     </div>
   );
