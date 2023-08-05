@@ -96,32 +96,36 @@ const SingleJournalEntry = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <div className="header-content">
+      <div className="header-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', margin: '15px' }}>
         <div>
+          <h2 style={{ backgroundColor: '#11b8b1', color: 'white', padding: '10px', borderRadius: '5px', marginBottom: '20px' }}>Crush Your Goals: Give Your Checklist a Power Boost!</h2>
+        </div>
+        <div style={{ marginBottom: '20px', marginLeft: '20px' }}>
           <CheckboxList
             checkboxValues={checkboxValues}
             setCheckboxValues={setCheckboxValues}
           />
         </div>
-        <div>
+        <div style={{ marginBottom: '20px', marginLeft: '20px' }}>
           <MoodButton setMood={setMood} mood={mood} />
         </div>
-        <div>
+        <div style={{ marginBottom: '20px', marginLeft: '20px' }}>
           <WaterIntakeCheckbox
             setWaterIntake={setWaterIntake}
             waterIntake={waterIntake}
           />
         </div>
-        <div>
+        <div style={{ marginBottom: '20px', marginLeft: '20px' }}>
           <Gratefuls setGratefuls={setGratefuls} gratefuls={gratefuls} />
         </div>
-        <div>
+        <div style={{ marginBottom: '20px', marginLeft: '20px' }}>
           <SleepCheckbox setSleep={setSleep} sleep={sleep} />
         </div>
-        <div>
+        <div style={{ marginBottom: '20px', marginLeft: '20px' }}>
           <div>
             <Button
               className="btn-block btn-primary"
+              style={{ margin: '10px' }}
               onClick={() => {
                 handleUpdateJournal();
               }}
@@ -130,6 +134,7 @@ const SingleJournalEntry = () => {
             </Button>
             <Button
               className="btn-block btn-primary"
+              style={{ margin: '10px' }}
               onClick={() => {
                 handleDeleteEntry();
               }}
