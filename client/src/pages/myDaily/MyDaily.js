@@ -47,7 +47,7 @@ const MyDaily = () => {
       console.log('New Journal Entry added successfully:', data);
       // Clear the input fields or take some other action here...
     } catch (error) {
-      console.error('Error adding new Journal Entry:', error);
+      console.error('Error adding new Journal Entry:', error.message);
     }
   };
 

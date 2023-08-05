@@ -25,6 +25,9 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
+// Add a console.log statement to log the current time when the server starts
+console.log('Server starting at', new Date());
+
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
   await server.start();
@@ -34,9 +37,9 @@ const startApolloServer = async () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
       console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-    })
-  })
-  };
-  
+    });
+  });
+};
+
 // Call the async function to start the server
-  startApolloServer();
+startApolloServer();
