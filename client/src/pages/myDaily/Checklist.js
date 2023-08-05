@@ -13,14 +13,16 @@ const CheckboxList = ({ checkboxValues, setCheckboxValues }) => {
 
   return (
     <div>
-      <h2>Did I?:</h2>
+      <h2>Today I:</h2>
+      <p style={{ fontSize: '16px'}}>(Check all that apply)</p>
       {Object.entries(checkboxValues).map(([name, checked]) => (
-        <div key={name}>
+        <div key={name} style={{ margin: '10px'}}>
           <input
             type="checkbox"
             name={name}
             checked={checked}
             onChange={handleCheckboxChange}
+            style={{ marginRight: '5px'}}
           />
           <label htmlFor={name}>{name}</label>
         </div>

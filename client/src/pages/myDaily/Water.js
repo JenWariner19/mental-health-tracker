@@ -18,19 +18,20 @@ const WaterIntakeCheckbox = ({ waterIntake, setWaterIntake }) => {
   };
 
   return (
-    <div>
+    <div style={{ margin: '10px'}}>
       <label>
         <input
           type="checkbox"
           checked={isChecked}
           onChange={handleCheckboxChange}
+          style={{ fontSize: '30px', marginRight: '10px' }}
         />
-        Hydrate yourself!
+        Hydration Update: Report Your Glass Count! 
       </label>
       <div>
-        <button onClick={handleIncrement}>+</button>
-        <span>{waterIntake} Glasses of H20</span>
-        <button onClick={handleDecrement}>-</button>
+        <button style={{ width: '50px', margin: '10px'}} onClick={handleIncrement}>+</button>
+        <span style={{ margin: '10px', fontSize: '20px'}}>{waterIntake} Glasses of H20</span>
+        <button style={{ width: '50px', margin: '10px'}} onClick={handleDecrement}>-</button>
       </div>
     </div>
   );

@@ -9,9 +9,9 @@ const MoodButton = ({ setMood, mood }) => {
     const moods = ['😊', '😢', '😡', '😴'];
   
     return (
-      <div>
-        <h2>Today I feel like:</h2>
-        <div>
+      <div style={{ margin: '10px'}}>
+        <h2>Today I am feeling:</h2>
+        <div style={{ margin: '10px'}}>
           {moods.map((emoji, index) => (
             <button
               key={index}
@@ -22,8 +22,8 @@ const MoodButton = ({ setMood, mood }) => {
             </button>
           ))}
         </div>
-        <p>
-          {mood ? `Today's mood: ${mood}` : 'Please enter how you feel today.'}
+        <p style={{ margin: '10px', fontSize: '20px'}}>
+          {mood ? `Today's mood: ${mood}` : 'Select an Emoji to Match Your Mood'}
         </p>
       </div>
     );

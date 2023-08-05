@@ -29,19 +29,20 @@ const SleepCheckbox = ({ setSleep, sleep }) => {
   };
 
   return (
-    <div>
+    <div style={{ margin: '10px'}}>
       <label>
         <input
           type="checkbox"
           checked={isChecked}
           onChange={handleCheckboxChange}
+          style={{ fontSize: '30px', marginRight: '10px' }}
         />
-        I slept for {sleep} hours.
+        Zzz's in the Bank: Deposited {sleep} Hours of Sleep!
 
       </label>
       <br />
-      <button onClick={handleAddHour}>+</button>
-      <button onClick={handleSubtractHour}>-</button>
+      <button style={{ width: '50px', margin: '10px'}} onClick={handleAddHour}>+</button>
+      <button style={{ width: '50px', margin: '10px'}} onClick={handleSubtractHour}>-</button>
     </div>
   );
 };
