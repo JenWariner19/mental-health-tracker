@@ -1,12 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const WaterIntakeCheckbox = ({ waterIntake, setWaterIntake }) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
-
+const WaterIntakeCounter = ({ waterIntake, setWaterIntake }) => {
   const handleIncrement = () => {
     setWaterIntake(waterIntake + 1);
   };
@@ -18,23 +12,17 @@ const WaterIntakeCheckbox = ({ waterIntake, setWaterIntake }) => {
   };
 
   return (
-    <div style={{ margin: '10px'}}>
-      <label>
-        <input
-          type="checkbox"
-          checked={isChecked}
-          onChange={handleCheckboxChange}
-          style={{ fontSize: '30px', marginRight: '10px' }}
-        />
-        Hydration Update: Report Your Glass Count! 
-      </label>
+    <div style={{ margin: '10px' }}>
       <div>
-        <button style={{ width: '50px', margin: '10px'}} onClick={handleIncrement}>+</button>
-        <span style={{ margin: '10px', fontSize: '20px'}}>{waterIntake} Glasses of H20</span>
-        <button style={{ width: '50px', margin: '10px'}} onClick={handleDecrement}>-</button>
+        <span>Hydration Update: Report Your Glass Count!</span>
+      </div>
+      <div>
+        <button style={{ width: '50px', margin: '10px' }} onClick={handleIncrement}>+</button>
+        <span style={{ margin: '10px', fontSize: '20px' }}>{waterIntake} Glasses of H20</span>
+        <button style={{ width: '50px', margin: '10px' }} onClick={handleDecrement}>-</button>
       </div>
     </div>
   );
 };
 
-export default WaterIntakeCheckbox;
+export default WaterIntakeCounter;
