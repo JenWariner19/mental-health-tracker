@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Button } from "react-bootstrap";
+import { Container, Button, Alert } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
@@ -17,13 +17,11 @@ const SingleJournalEntry = () => {
   const { journalEntryId } = useParams();
 
   const { loading, data } = useQuery(QUERY_ME, {
-    // pass URL parameter
     variables: { journalEntryId: journalEntryId },
   });
 
   const journalEntry =
     data?.me.journalEntries.find((entry) => entry._id === journalEntryId) || {};
-    console.log(journalEntry)
 
   const [updateJournal, { error }] = useMutation(UPDATE_JOURNAL);
   const [removeJournalEntry, { err }] = useMutation(REMOVE_JOURNAL);
@@ -38,6 +36,7 @@ const SingleJournalEntry = () => {
   const [waterIntake, setWaterIntake] = useState(0);
   const [gratefuls, setGratefuls] = useState("");
   const [sleep, setSleep] = useState(0);
+  const [successMessage, setSuccessMessage] = useState(""); // Define a state variable for success message
 
   useEffect(() => {
     if (!loading && journalEntry) {
@@ -57,17 +56,10 @@ const SingleJournalEntry = () => {
   }, [loading, journalEntry]);
 
   const handleUpdateJournal = async () => {
-    console.log({
-      mood,
-      checkList: checkboxValues,
-      waterIntake,
-      gratefuls,
-      sleep,
-    });
-
     try {
       const { data } = await updateJournal({
         variables: {
+          journalEntryId,
           mood,
           checkList: checkboxValues,
           waterIntake,
@@ -77,7 +69,7 @@ const SingleJournalEntry = () => {
       });
 
       console.log("Journal Entry updated successfully:", data);
-      // Clear the input fields or take some other action here...
+      setSuccessMessage("Journal Entry updated successfully!"); // Set the success message
     } catch (error) {
       console.error("Error updating Journal Entry:", error);
     }
@@ -145,6 +137,12 @@ const SingleJournalEntry = () => {
               Delete Entry
             </Button>
           </div>
+          {/* Render success message when it's available */}
+          {successMessage && (
+            <Alert variant="success" className="mt-3">
+              {successMessage}
+            </Alert>
+          )}
         </div>
         {error && (
           <div className="col-12 my-3 bg-danger text-white p-3">
