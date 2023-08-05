@@ -1,14 +1,20 @@
-import React from "react"; 
+import React, { useState } from "react";
 
 const CheckboxList = ({ checkboxValues, setCheckboxValues }) => {
+  const [isSaved, setIsSaved] = useState(false); // State variable to track if checklist entry is saved
 
-  // Handler function to update checkbox values
+  // Handler function to update checkbox values and show the saved message
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;
     setCheckboxValues((prevValues) => ({
       ...prevValues,
       [name]: checked,
     }));
+    setIsSaved(true); // Set the saved message to be visible
+    // Hide the message after a brief delay (e.g., 2 seconds)
+    setTimeout(() => {
+      setIsSaved(false);
+    }, 10000);
   };
 
   return (
@@ -27,8 +33,10 @@ const CheckboxList = ({ checkboxValues, setCheckboxValues }) => {
           <label htmlFor={name}>{name}</label>
         </div>
       ))}
+      {isSaved && <p style={{ color: "green" }}>Checklist entry is saved!</p>}
     </div>
   );
 };
 
 export default CheckboxList;
+
