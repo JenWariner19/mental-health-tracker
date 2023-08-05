@@ -16,16 +16,6 @@ import Auth from "../utils/auth";
 const SingleJournalEntry = () => {
   const { journalEntryId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_ME, {
-    variables: { journalEntryId: journalEntryId },
-  });
-
-  const journalEntry =
-    data?.me.journalEntries.find((entry) => entry._id === journalEntryId) || {};
-
-  const [updateJournal, { error }] = useMutation(UPDATE_JOURNAL);
-  const [removeJournalEntry, { err }] = useMutation(REMOVE_JOURNAL);
-
   const [checkboxValues, setCheckboxValues] = useState({
     workout: false,
     sunlight: false,
@@ -36,12 +26,25 @@ const SingleJournalEntry = () => {
   const [waterIntake, setWaterIntake] = useState(0);
   const [gratefuls, setGratefuls] = useState("");
   const [sleep, setSleep] = useState(0);
-  const [successMessage, setSuccessMessage] = useState(""); // Define a state variable for success message
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isDeleted, setIsDeleted] = useState(false);
+
+  const [updateJournal, { error }] = useMutation(UPDATE_JOURNAL);
+  const [removeJournalEntry, { err }] = useMutation(REMOVE_JOURNAL);
+
+  const { loading, data } = useQuery(QUERY_ME, {
+    variables: { journalEntryId: journalEntryId },
+  });
 
   useEffect(() => {
-    if (!loading && journalEntry) {
+    if (!loading && data) {
+      const journalEntry =
+        data?.me.journalEntries.find((entry) => entry._id === journalEntryId) ||
+        {};
+
       const { workout, sunlight, supplements, selfCare } =
         journalEntry.checkList || {};
+
       setCheckboxValues({
         workout: Boolean(workout),
         sunlight: Boolean(sunlight),
@@ -53,7 +56,8 @@ const SingleJournalEntry = () => {
       setGratefuls(journalEntry.gratefuls || "");
       setSleep(journalEntry.sleep || 0);
     }
-  }, [loading, journalEntry]);
+  }, [loading, data, journalEntryId]);
+
 
   const handleUpdateJournal = async () => {
     try {
@@ -87,6 +91,8 @@ const SingleJournalEntry = () => {
         variables: { journalEntryId },
         refetchQueries: [{ query: QUERY_ME }],
       });
+
+      setIsDeleted(true); // Set isDeleted to true after successful delete
     } catch (err) {
       console.error(err);
     }
@@ -94,7 +100,31 @@ const SingleJournalEntry = () => {
 
   if (loading) {
     return <div>Loading...</div>;
+  } else if (isDeleted) {
+    // Show the deleted message and links back to journal and daily checklist
+    return (
+      <div className="header-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', margin: '15px' }}>
+        <Alert variant="success" className="mt-3">
+          Journal Entry deleted successfully!
+        </Alert>
+        <Button
+          className="btn-block btn-primary"
+          style={{ margin: '10px' }}
+          href="/journal" // Link to your journal page
+        >
+          Back to Journal
+        </Button>
+        <Button
+          className="btn-block btn-primary"
+          style={{ margin: '10px' }}
+          href="/daily-checklist" // Link to your daily checklist page
+        >
+          Back to Daily Checklist
+        </Button>
+      </div>
+    );
   } else {
+    // Show the journal entry form
     return (
       <div className="header-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', margin: '15px' }}>
         <div>
@@ -136,7 +166,7 @@ const SingleJournalEntry = () => {
               className="btn-block btn-primary"
               style={{ margin: '10px' }}
               onClick={() => {
-                handleDeleteEntry();
+                handleDeleteEntry(journalEntryId);
               }}
             >
               Delete Entry
