@@ -53,32 +53,32 @@ const MyDaily = () => {
 
 
   return (
-    <div className="header-content">
+    <div className="header-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', margin: '15px' }}>
       <div>
-        <h2>Write your daily journal entry here:</h2>
+        <h2 style={{ backgroundColor: '#11b8b1', color: 'white', padding: '10px', borderRadius: '5px', marginBottom: '20px'}}>Ready, Set, Achieve: Nail Your Daily Checklist!</h2>
       </div>
-      <div>
+      <div style={{ marginBottom: '20px', marginLeft: '20px'}}>
         <CheckboxList checkboxValues={checkboxValues} setCheckboxValues={setCheckboxValues} />
       </div>
-      <div>
+      <div style={{ marginBottom: '20px', marginLeft: '20px'}}>
         <MoodButton setMood={setMood} mood={mood}/>
       </div>
-      <div>
+      <div style={{ marginBottom: '20px', marginLeft: '20px'}}>
         <WaterIntakeCheckbox setWaterIntake={setWaterIntake} waterIntake={waterIntake} />
       </div>
-      <div>
+      <div style={{ marginBottom: '20px', marginLeft: '20px'}}>
         <Gratefuls setGratefuls={setGratefuls} gratefuls={gratefuls} />
       </div>
-      <div>
+      <div style={{ marginBottom: '20px', marginLeft: '20px'}}>
         <SleepCheckbox setSleep={setSleep} sleep={sleep} />
       </div>
-      <div>
+      <div style={{ marginBottom: '20px', marginLeft: '20px'}}>
         <button
           className="btn btn-primary btn-block btn-squared w-100"
           type="submit"
           onClick={handleAddJournalEntry}
         >
-          Save Journal Entry
+          Save Daily Checklist Entry
         </button>
       </div>
       {error && (
