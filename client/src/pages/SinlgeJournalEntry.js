@@ -131,7 +131,7 @@ const SingleJournalEntry = () => {
             <Button
               className="btn-block btn-primary"
               onClick={() => {
-                handleUpdateJournal;
+                handleUpdateJournal();
               }}
             >
               Update Entry
@@ -139,7 +139,7 @@ const SingleJournalEntry = () => {
             <Button
               className="btn-block btn-primary"
               onClick={() => {
-                handleDeleteEntry;
+                handleDeleteEntry();
               }}
             >
               Delete Entry
