@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const CheckboxList = ({ checkboxValues, setCheckboxValues }) => {
   const [isSaved, setIsSaved] = useState(false); // State variable to track if checklist entry is saved
+  const [selectedItem, setSelectedItem] = useState("");
 
   // Handler function to update checkbox values and show the saved message
   const handleCheckboxChange = (event) => {
@@ -15,12 +16,12 @@ const CheckboxList = ({ checkboxValues, setCheckboxValues }) => {
     setTimeout(() => {
       setIsSaved(false);
     }, 10000);
+    setSelectedItem(name);
   };
 
   return (
     <div>
       <h2>Today I:</h2>
-      <p style={{ fontSize: '16px'}}>(Check all that apply)</p>
       {Object.entries(checkboxValues).map(([name, checked]) => (
         <div key={name} style={{ margin: '10px'}}>
           <input
@@ -33,7 +34,10 @@ const CheckboxList = ({ checkboxValues, setCheckboxValues }) => {
           <label htmlFor={name}>{name}</label>
         </div>
       ))}
-      {isSaved && <p style={{ color: "green" }}>Checklist entry is saved!</p>}
+      {/* {isSaved && <p style={{ color: "green" }}>Checklist entry is saved!</p>} */}
+      <p style={{ margin: '10px', fontSize: '20px'}}>
+          {selectedItem ? `You selected: ${selectedItem}` : 'Please select one from the above list'}
+        </p>
     </div>
   );
 };

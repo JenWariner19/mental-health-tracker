@@ -66,20 +66,20 @@ const MyThoughts = () => {
     }
   };
   return (
-    <div className="mythought-list-container d-flex flex-wrap">
+    <div className="mythought-list-container">
       <div className="row">
         {myThoughts &&
           myThoughts.map((thought) => (
             <div key={thought._id} className="col-md-4 mb-3">
-              <div className="card mycard h-100">
-                <h4 className="card-header text-light p-2 m-0">
+              <div className="mycard h-100">
+                <h4 className="mycard-header text-light p-2 m-0">
                   <>
                     <span style={{ fontSize: "1rem" }}>
                       {thought.createdAt}
                     </span>
                   </>
                 </h4>
-                <div className="card-body p-2">
+                <div className="mycard-body bg-light p-2">
                   {editingThoughtId !== null &&
                   editingThoughtId === thought._id ? (
                     <div>
