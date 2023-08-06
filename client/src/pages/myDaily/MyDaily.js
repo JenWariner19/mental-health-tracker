@@ -11,6 +11,8 @@ import CheckboxList from './Checklist';
 
 const MyDaily = () => {
   const [addJournalEntry, { error }] = useMutation(ADD_JOURNAL_ENTRY);
+
+  const [showMessage, setShowMessage] = useState(false); // New state for showing the message
   
   const [checkboxValues, setCheckboxValues] = useState({
     workout: false,
@@ -45,6 +47,7 @@ const MyDaily = () => {
       });
     
       console.log('New Journal Entry added successfully:', data);
+      setShowMessage(true); // Show the message on successful entry creation
       // Clear the input fields or take some other action here...
     } catch (error) {
       console.error('Error adding new Journal Entry:', error.message);
@@ -81,13 +84,22 @@ const MyDaily = () => {
           Save Daily Checklist Entry
         </button>
       </div>
+      {showMessage && (
+        <div className="col-12 my-3 bg-success text-black p-3">
+          Your daily entry saved!
+        </div>
+
+      )}
       {error && (
           <div className="col-12 my-3 bg-danger text-white p-3">
-            Something went wrong...
+            Something went wrong...8
           </div>
         )}
     </div>
     );
+    console.log(showMessage);
 };
+
+
 
 export default MyDaily;
