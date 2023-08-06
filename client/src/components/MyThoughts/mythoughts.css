@@ -10,11 +10,8 @@
   }
   
   .mycard {
-    height: 400px;
-    width: 400px;
+    height: 250px;
     flex: 0 0 calc(33.3333% - 20px);
-    /* border: 1px solid black; */
-    border-radius: 5px;
     margin: 20px;
   }
   
@@ -23,15 +20,21 @@
     border-radius: 5px 5px 0px 0px;
   }
 
-  .mycard-body {
+  /* .mycard-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 1px solid black;
     padding: 20px;
-    height: 150px;
-  }
+    height: 100%;
+    width: 100%;
+  } */
   
   .button-container {
     display: flex; 
     justify-content: center;
+    /* border: 1px solid black;
+    border-radius: 0px 0px 5px 5px; */
   }
   
   .button-wrapper {
@@ -52,7 +55,7 @@
   
   @media (min-width: 768px) {
     .mycard {
-      flex-basis: 0 0 calc(50% - 40px);
+      flex-basis: 33.3333%;
     }
   }
   
