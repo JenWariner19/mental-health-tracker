@@ -6,7 +6,10 @@ const SleepCheckbox = ({ setSleep, sleep }) => {
   };
 
   const handleSubtractHour = () => {
-    setSleep(prevSleepHours => (parseFloat(prevSleepHours) - 1).toFixed(2));
+    setSleep(prevSleepHours => {
+      const newSleepHours = parseFloat(prevSleepHours) - 1;
+      return Math.max(newSleepHours, 0).toFixed(2);
+    });
   };
 
   return (
@@ -22,4 +25,3 @@ const SleepCheckbox = ({ setSleep, sleep }) => {
 };
 
 export default SleepCheckbox;
-
