@@ -110,14 +110,14 @@ const SingleJournalEntry = () => {
         <Button
           className="btn-block btn-primary"
           style={{ margin: '10px' }}
-          href="/journal" // Link to your journal page
+          href="/myJournal" 
         >
           Back to Journal
         </Button>
         <Button
           className="btn-block btn-primary"
           style={{ margin: '10px' }}
-          href="/daily-checklist" // Link to your daily checklist page
+          href="/myDaily" 
         >
           Back to Daily Checklist
         </Button>
