@@ -67,11 +67,10 @@ const MyThoughts = () => {
   };
   return (
     <div className="mythought-list-container">
-      <div className="row">
         {myThoughts &&
           myThoughts.map((thought) => (
-            <div key={thought._id} className="col-md-4 mb-3">
-              <div className="mycard h-100">
+            <div key={thought._id} className="col-12 col-md-4 mb-3 p-2">
+              <div className="card mycard h-100 d-flex flex-column p-2">
                 <h4 className="mycard-header text-light p-2 m-0">
                   <>
                     <span style={{ fontSize: "1rem" }}>
@@ -79,7 +78,7 @@ const MyThoughts = () => {
                     </span>
                   </>
                 </h4>
-                <div className="mycard-body bg-light p-2">
+                <div className="card-body bg-light p-2">
                   {editingThoughtId !== null &&
                   editingThoughtId === thought._id ? (
                     <div>
@@ -89,7 +88,6 @@ const MyThoughts = () => {
                           clearedTextarea ? updatedThought : thought.thoughtText
                         }
                         onChange={handleChange}
-                        style={{ width: "85%", resize: "vertical" }}
                         rows={5}
                       />
                       <div>
@@ -134,7 +132,6 @@ const MyThoughts = () => {
               </div>
             </div>
           ))}
-      </div>
       {error && (
           <div className="mycard col-12 my-3 bg-danger text-white p-3">
             Something went wrong...

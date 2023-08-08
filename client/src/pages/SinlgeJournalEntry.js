@@ -174,7 +174,7 @@ const SingleJournalEntry = () => {
           </div>
           {/* Render success message when it's available */}
           {successMessage && (
-            <Alert variant="success" className="mt-3">
+            <Alert variant="success" className="mt-3" style={{ backgroundColor: '#11b8b1', color: 'white', padding: '10px', borderRadius: '5px', marginBottom: '20px'}}>
               {successMessage}
             </Alert>
           )}

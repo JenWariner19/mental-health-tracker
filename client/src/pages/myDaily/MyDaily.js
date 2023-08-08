@@ -85,8 +85,8 @@ const MyDaily = () => {
         </button>
       </div>
       {showMessage && (
-        <div className="col-12 my-3 bg-success text-black p-3">
-          Your daily entry saved!
+        <div style={{ backgroundColor: '#11b8b1', color: 'white', padding: '10px', borderRadius: '5px', marginBottom: '20px'}}>
+          Your daily entry has been saved to your calendar!
         </div>
 
       )}
