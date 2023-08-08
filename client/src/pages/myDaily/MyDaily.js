@@ -27,14 +27,6 @@ const MyDaily = () => {
 
   const handleAddJournalEntry = async () => {
   
-    console.log({
-        mood,
-        checkList: checkboxValues,
-        waterIntake,
-        gratefuls,
-        sleep,
-      });
-
     try {
       const { data } = await addJournalEntry({
         variables: {
@@ -46,7 +38,7 @@ const MyDaily = () => {
           },
       });
     
-      console.log('New Journal Entry added successfully:', data);
+      
       setShowMessage(true); // Show the message on successful entry creation
       // Clear the input fields or take some other action here...
     } catch (error) {
@@ -97,7 +89,7 @@ const MyDaily = () => {
         )}
     </div>
     );
-    console.log(showMessage);
+    
 };
 
 
