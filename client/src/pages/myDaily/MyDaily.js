@@ -80,13 +80,14 @@ const MyDaily = () => {
       {showMessage && (
         <div style={{ backgroundColor: '#11b8b1', color: 'white', padding: '10px', borderRadius: '5px', marginBottom: '20px' }}>
           Your daily entry has been saved to your calendar!
+          <Link to={`/myJournal`}>
           <Button
             className="btn-block btn-primary"
             style={{ margin: '15px', backgroundColor: 'white', color: 'Black', fontSize: 'px' }}
-            href="/myJournal"
           >
             Visit My Calender
           </Button>
+          </Link>
         </div>
 
       )}
