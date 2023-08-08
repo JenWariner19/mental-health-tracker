@@ -25,8 +25,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-// Add a console.log statement to log the current time when the server starts
-console.log('Server starting at', new Date());
+
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
