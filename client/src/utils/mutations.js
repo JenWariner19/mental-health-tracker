@@ -41,7 +41,7 @@ mutation addThought($thoughtText: String!) {
 
 export const ADD_JOURNAL_ENTRY = gql`
 mutation addJournalEntry($mood: String!, $checkList: CheckListInput, $waterIntake: Int, $gratefuls: String, $sleep: String) {
-  addJournalEntry(mood: $mood, checklist: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
+  addJournalEntry(mood: $mood, checkList: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
     _id
     journalEntries {
       _id
@@ -88,7 +88,7 @@ mutation updateThought($thoughtId: ID!, $thoughtText: String!) {
 
 export const UPDATE_JOURNAL = gql`
 mutation updateJournal($journalEntryId: ID!, $mood: String!, $checkList: CheckListInput, $waterIntake: Int, $gratefuls: String, $sleep: String) {
-  updateJournalEntry(journalEntryId: $journalEntryId, mood: $mood, checklist: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
+  updateJournalEntry(journalEntryId: $journalEntryId, mood: $mood, checkList: $checkList, waterIntake: $waterIntake, gratefuls: $gratefuls, sleep: $sleep) {
     _id
     journalEntries {
       _id
