@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Container, Button, Alert } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
@@ -107,20 +108,22 @@ const SingleJournalEntry = () => {
         <Alert variant="success" className="mt-3">
           Journal Entry deleted successfully!
         </Alert>
-        <Button
+        <Link to={`/myJournal`}>
+         <Button
           className="btn-block btn-primary"
           style={{ margin: '10px' }}
-          href="/myJournal" 
         >
           Back to Journal
-        </Button>
+          </Button>
+        </Link>
+        <Link to={`/myDaily`}>
         <Button
           className="btn-block btn-primary"
           style={{ margin: '10px' }}
-          href="/myDaily" 
         >
           Back to Daily Checklist
         </Button>
+        </Link>
       </div>
     );
   } else {
@@ -174,7 +177,7 @@ const SingleJournalEntry = () => {
           </div>
           {/* Render success message when it's available */}
           {successMessage && (
-            <Alert variant="success" className="mt-3" style={{ backgroundColor: '#11b8b1', color: 'white', padding: '10px', borderRadius: '5px', marginBottom: '20px'}}>
+            <Alert variant="success" className="mt-3" style={{ backgroundColor: '#11b8b1', color: 'white', padding: '10px', borderRadius: '5px', marginBottom: '20px' }}>
               {successMessage}
             </Alert>
           )}
