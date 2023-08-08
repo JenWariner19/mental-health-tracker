@@ -11,30 +11,20 @@
   
   .mycard {
     height: 250px;
-    flex: 0 0 calc(33.3333% - 20px);
+    min-width: 400px;
+    flex: 1;
     margin: 20px;
   }
   
   .mycard-header {
     background-color: #11b8b1;
     border-radius: 5px 5px 0px 0px;
+    white-space: nowrap;
   }
-
-  /* .mycard-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid black;
-    padding: 20px;
-    height: 100%;
-    width: 100%;
-  } */
   
   .button-container {
     display: flex; 
     justify-content: center;
-    /* border: 1px solid black;
-    border-radius: 0px 0px 5px 5px; */
   }
   
   .button-wrapper {
@@ -48,8 +38,11 @@
   
   @media (max-width: 767px) {
     .mycard {
-      width: 100%;
-      max-width: 400px;
+      width: 90%;
+      margin: 10px;
+    }
+    .mythought-list-container {
+      justify-content: center;
     }
   }
   
@@ -61,7 +54,13 @@
   
   @media (min-width: 992px) {
     .mycard {
-      flex-basis: 0 0 calc(33.3333% - 40px);
+      flex-basis: 0 0 calc(33.3333% - 20px);
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .mycard {
+      min-width: 200px;
     }
   }
 
