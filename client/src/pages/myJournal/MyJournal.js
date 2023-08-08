@@ -45,7 +45,7 @@ const MyJournal = () => {
   const { loading, data } = useQuery(QUERY_ME);
   const [removeJournalEntry, { error }] = useMutation(REMOVE_JOURNAL);
   const userData = data?.me || {};
-  console.log(userData.journalEntries);
+ 
 
   const handleDeleteEntry = async (journalEntryId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
