@@ -39,7 +39,7 @@ To install necessary dependencies, run the following command:
 
 
 ## Deployment
-<!-- this is where the deplyment link will go --> 
+* https://morning-waters-68042-3ca90f8eed1f.herokuapp.com/
 
 ## Languages
 * JavaScript, HTML, CSS, Node.js, Express.js,Heroku, Moment.js, Bootstrap, Mongo_DB and Mongoose
