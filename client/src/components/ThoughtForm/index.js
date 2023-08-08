@@ -24,6 +24,9 @@ const ThoughtForm = () => {
       });
 
       window.location.reload();
+      setFormState({
+        thoughtText: "",
+      });
     } catch (err) {
       console.error(err);
     }
